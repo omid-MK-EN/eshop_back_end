@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     #CUSTOM-PACKGEE
     "eshop_account_apies.apps.EshopAccountApiesConfig",
+    "eshop_about_us_apies.apps.EshopAboutUsApiesConfig",
 ]
 
 MIDDLEWARE = [
@@ -134,4 +135,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "static_cdn", "media_root")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#CUSTOM-USER-MODEL
 AUTH_USER_MODEL = 'eshop_account_apies.User'
