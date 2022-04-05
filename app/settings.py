@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     #CUSTOM-PACKGEE
     "eshop_account_apies.apps.EshopAccountApiesConfig",
     "eshop_about_us_apies.apps.EshopAboutUsApiesConfig",
-    # "eshop_contact_us"
+    "eshop_contact_us_apies.apps.EshopContactUsApiesConfig",
 ]
 
 MIDDLEWARE = [
