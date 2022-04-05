@@ -1,2 +1,5 @@
 from django.contrib import admin
-# from .models import AboutUs
+from .models import EshopAboutUs
+
+
+admin.site.register(EshopAboutUs)
