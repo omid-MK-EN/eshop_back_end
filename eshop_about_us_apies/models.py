@@ -1,6 +1,6 @@
 from django.db import models
 
-class AboutUs(models.Model):
+class EshopAboutUs(models.Model):
     company_name = models.CharField(max_length=50)
     email = models.EmailField()
     tel = models.CharField(max_length=30)
