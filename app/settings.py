@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     #CUSTOM-PACKGEE
     "eshop_account_apies.apps.EshopAccountApiesConfig",
     "eshop_about_us_apies.apps.EshopAboutUsApiesConfig",
+    # "eshop_contact_us"
 ]
 
 MIDDLEWARE = [
@@ -137,3 +138,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #CUSTOM-USER-MODEL
 AUTH_USER_MODEL = 'eshop_account_apies.User'
+
+#DJANGO-REST-FRAMEWORK-CONFIGURATIONS
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        # 'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+
+    ],
+
+     # 'DEFAULT_FILTER_BACKENDS': [
+     #     'django_filters.rest_framework.DjangoFilterBackend',
+     #     "rest_framework.filters.SearchFilter",
+     #     "rest_framework.filters.OrderingFilter",
+     #     ],
+    #  'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    # 'PAGE_SIZE': 1,
+}

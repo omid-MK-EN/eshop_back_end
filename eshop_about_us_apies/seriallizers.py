@@ -5,4 +5,4 @@ from .models import EshopAboutUs
 class EshopAboutUsSerializer(serializers.ModelSerializer):
     class Meta:
         model= EshopAboutUs
-        exclude= ["is_active"]
+        fields="__all__"
