@@ -29,3 +29,13 @@ class EshopForwardContactUsMessage(models.Model):
 
     def __str__(self) -> str:
          return self.message.name
+
+
+class EshopSocialMedia(models.Model):
+    title = models.CharField(max_length=50)
+    url= models.URLField()
+    image= models.ImageField(upload_to = "eshop_social_medias/")
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
