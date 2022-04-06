@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #THIRD-PARTY-PACKGAGES
     'rest_framework',
 
+
     #CUSTOM-PACKGEE
     "eshop_account_apies.apps.EshopAccountApiesConfig",
     "eshop_about_us_apies.apps.EshopAboutUsApiesConfig",
@@ -56,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'app.urls'
@@ -155,3 +157,9 @@ REST_FRAMEWORK = {
     #  'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     # 'PAGE_SIZE': 1,
 }
+
+#DJANGO-CORS-POLICY-PACKAGE-CONFIGURATIONS
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:4200",
+#     "http://127.0.0.1:4200",
+# ]
