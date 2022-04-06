@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('rest-auth/', include('dj_rest_auth.urls')),
+    path('rest-auth/register/', include('dj_rest_auth.registration.urls')),
     path("",include("eshop_about_us_apies.urls")),
     path("",include("eshop_contact_us_apies.urls")),
     path("",include("eshop_produt_apies.urls")),

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
+    "corsheaders",
 
 
     #CUSTOM-PACKGEE
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
 
 ]
 
@@ -166,11 +168,12 @@ REST_FRAMEWORK = {
     # 'PAGE_SIZE': 1,
 }
 
+
 #DJANGO-CORS-POLICY-PACKAGE-CONFIGURATIONS
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:4200",
-#     "http://127.0.0.1:4200",
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",
+    "http://127.0.0.1:4200",
+]
 
 #DJ-REST-AUTH-CONFIGURATIONS
 SITE_ID = 1
