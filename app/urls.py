@@ -24,6 +24,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path("",include("eshop_about_us_apies.urls")),
     path("",include("eshop_contact_us_apies.urls")),
+    path("",include("eshop_produt_apies.urls")),
     path('', main_page),
 ]
 
