@@ -41,6 +41,8 @@ INSTALLED_APPS = [
 
     #THIRD-PARTY-PACKGAGES
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
 
 
     #CUSTOM-PACKGEE
