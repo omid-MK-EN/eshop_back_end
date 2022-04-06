@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "eshop_account_apies.apps.EshopAccountApiesConfig",
     "eshop_about_us_apies.apps.EshopAboutUsApiesConfig",
     "eshop_contact_us_apies.apps.EshopContactUsApiesConfig",
+    "eshop_produt_apies.apps.EshopProdutApiesConfig"
 ]
 
 MIDDLEWARE = [
