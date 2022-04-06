@@ -172,8 +172,17 @@ REST_FRAMEWORK = {
 #     "http://127.0.0.1:4200",
 # ]
 
+#DJ-REST-AUTH-CONFIGURATIONS
 SITE_ID = 1
-
 REST_USE_JWT = True
 JWT_AUTH_COOKIE = 'access'
 JWT_AUTH_REFRESH_COOKIE = 'refresh'
+
+#EMAIL-BACKENDS-CONFIGURATIONS
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'testdjangotestdjango@gmail.com'
+EMAIL_HOST_PASSWORD = ' zmgnvndsrpzyrsqt'
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
