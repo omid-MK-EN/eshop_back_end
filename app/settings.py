@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     #THIRD-PARTY-PACKGAGES
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_auth',
+    'dj_rest_auth',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
 
 
     #CUSTOM-PACKGEE
@@ -147,8 +151,9 @@ AUTH_USER_MODEL = 'eshop_account_apies.User'
 #DJANGO-REST-FRAMEWORK-CONFIGURATIONS
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.BasicAuthentication',
         # 'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
 
     ],
 
@@ -166,3 +171,9 @@ REST_FRAMEWORK = {
 #     "http://localhost:4200",
 #     "http://127.0.0.1:4200",
 # ]
+
+SITE_ID = 1
+
+REST_USE_JWT = True
+JWT_AUTH_COOKIE = 'access'
+JWT_AUTH_REFRESH_COOKIE = 'refresh'
