@@ -1,11 +1,12 @@
-# from rest_framework import routers
-# from .views import EshopAboutUsViewSet
-# from django.urls import path,include
+from rest_framework import routers
+from .views import EshopContactUsViewSet, EshopContactUsMessageViewSet
+from django.urls import path,include
 #
-# router = routers.SimpleRouter()
-# router.register('about_us', EshopAboutUsViewSet,basename="about_us")
+router = routers.SimpleRouter()
+router.register('contact_us',EshopContactUsViewSet,basename="contact_us")
+router.register('forward_message_contact_us',EshopContactUsMessageViewSet,basename="forward_message_contact_us")
 #
 #
-# urlpatterns = [
-#    path("",include(router.urls)),
-# ]
+urlpatterns = [
+   path("",include(router.urls)),
+]

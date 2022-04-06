@@ -1,3 +1,15 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .seriallizers import EshopContactUsSerializer,EshopContactUsMessageSerializer
+from .models import EshopContactUs,EshopForwardContactUsMessage
 
-# Create your views here.
+class EshopContactUsViewSet(viewsets.ModelViewSet):
+    queryset = EshopContactUs.objects.all()
+    serializer_class = EshopContactUsSerializer
+
+
+class EshopContactUsMessageViewSet(viewsets.ModelViewSet):
+    queryset = EshopForwardContactUsMessage.objects.all()
+    serializer_class = EshopContactUsMessageSerializer
+
+
+
