@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from .models import User
+from .models import User,Newsletters
 
 # is_new_active = User.is_new_active
 # is_accounting_manager = User.is_accounting_manager
@@ -14,3 +14,4 @@ from .models import User
 #     ("bio",{"fields":("bio",)}),
 # )
 admin.site.register(User)
+admin.site.register(Newsletters)

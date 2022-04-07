@@ -8,5 +8,5 @@ class EshopAboutUsViewSet(viewsets.ModelViewSet):
     serializer_class = EshopAboutUsSerializer
 
     def get_queryset(self):
-        # return EshopAboutUs.objects.filter(is_active=True).first()
         return EshopAboutUs.objects.filter(is_active=True)
+       
