@@ -3,7 +3,7 @@ from .views import NewslettersViewSet
 from django.urls import path,include
 
 router = routers.SimpleRouter()
-router.register('newsletters', NewslettersViewSet,basename="newletters")
+router.register('newletters', NewslettersViewSet,basename="newletters")
 
 
 urlpatterns = [

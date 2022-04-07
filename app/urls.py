@@ -38,6 +38,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #THIRD-PARTY-PACKAGE-URLS
     path('api-auth/', include('rest_framework.urls')),
     path('rest-auth/', include('dj_rest_auth.urls')),
     path('rest-auth/register/', include('dj_rest_auth.registration.urls')),
@@ -45,6 +46,7 @@ urlpatterns = [
     re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     
+    #CUSTOM-APPS-URLS
     path("",include("eshop_account_apies.urls")),
     path("",include("eshop_about_us_apies.urls")),
     path("",include("eshop_contact_us_apies.urls")),
