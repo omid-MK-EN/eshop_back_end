@@ -3,11 +3,12 @@ from .views import *
 from django.urls import path,include
 
 router = routers.SimpleRouter()
-router.register('product_color', EshopProductColorViewSet,basename="product_color")
-router.register('product_size', EshopProductSizeViewSet,basename="product_size")
-router.register('product_brand', EshopProductBrandViewSet,basename="product_brand")
-router.register('related_photo', ProductRelatedPhotosViewSet,basename="related_photo")
-router.register('product', EshopProductPhotosViewSet,basename="product")
+router.register('product_colorss', EshopProductColorViewSet,basename="product_colors")
+router.register('product_sizes', EshopProductSizeViewSet,basename="product_sizes")
+router.register('product_categories', EshopProductCategoryViewSet,basename="product_categories")
+router.register('product_brands', EshopProductBrandViewSet,basename="product_brands")
+router.register('related_photos', ProductRelatedPhotosViewSet,basename="related_photos")
+router.register('products',  EshopProductViewSet,basename="products")
 
 
 urlpatterns = [

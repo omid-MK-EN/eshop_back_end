@@ -19,17 +19,14 @@ class EshopProductBrandViewSet(viewsets.ModelViewSet):
     queryset = EshopProductBrand.objects.all()
     serializer_class= EshopProductBrandSerializer
 
-class EshopProductBrandViewSet(viewsets.ModelViewSet):
-    queryset = EshopProductBrand.objects.all()
-    serializer_class= EshopProductBrandSerializer
 
 
 class ProductRelatedPhotosViewSet(viewsets.ModelViewSet):
     queryset = ProductRelatedPhotos.objects.all()
     serializer_class= ProductRelatedPhotosSerializer
 
-class EshopProductPhotosViewSet(viewsets.ModelViewSet):
-    queryset = ProductRelatedPhotos.objects.all()
+class EshopProductViewSet(viewsets.ModelViewSet):
+    queryset =  EshopProduct.objects.all()
     serializer_class= EshopProductSerializer
 
 

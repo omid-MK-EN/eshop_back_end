@@ -20,12 +20,12 @@ class EshopProductCategorySerializer(serializers.ModelSerializer):
 
 class EshopProductBrandSerializer(serializers.ModelSerializer):
     class Meta:
-        model= EshopProductCategory
+        model= EshopProductBrand
         fields="__all__"
 
 class ProductRelatedPhotosSerializer(serializers.ModelSerializer):
     class Meta:
-        model= EshopProductCategory
+        model= ProductRelatedPhotos
         fields="__all__"
 
 
