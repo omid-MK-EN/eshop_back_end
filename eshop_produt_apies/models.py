@@ -77,7 +77,7 @@ class EshopProduct(models.Model):
     # mojodi der enbar
     is_exit = models.BooleanField(default=True)
     is_favorite= models.ForeignKey(get_user_model(),on_delete=models.CASCADE,related_name='is_favorite',null=True,blank=True)
-    product_photo= models.ForeignKey(ProductRelatedPhotos,on_delete=models.CASCADE,related_name="product_related",null=True,blank=True)
+    product_photo= models.ManyToManyField(ProductRelatedPhotos,related_name="product_related",null=True,blank=True)
 
 
     def __str__(self) -> str:
