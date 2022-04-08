@@ -49,7 +49,7 @@ class ProductRelatedPhotos(models.Model):
     name = models.CharField(max_length=20)
     image = models.ImageField(upload_to="related_images/", null=True, blank=True)
     active = models.BooleanField(default=True)
-    product= models.ForeignKey("EshopProduct",on_delete=models.CASCADE,related_name="product_related",null=True,blank=True)
+    
 
     def __str__(self):
         return self.name
@@ -77,6 +77,8 @@ class EshopProduct(models.Model):
     # mojodi der enbar
     is_exit = models.BooleanField(default=True)
     is_favorite= models.ForeignKey(get_user_model(),on_delete=models.CASCADE,related_name='is_favorite',null=True,blank=True)
+    product_photo= models.ForeignKey(ProductRelatedPhotos,on_delete=models.CASCADE,related_name="product_related",null=True,blank=True)
+
 
     def __str__(self) -> str:
         return self.title
