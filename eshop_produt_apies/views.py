@@ -26,7 +26,7 @@ class ProductRelatedPhotosViewSet(viewsets.ModelViewSet):
     serializer_class= ProductRelatedPhotosSerializer
 
 class EshopProductViewSet(viewsets.ModelViewSet):
-    queryset =  EshopProduct.objects.all()
+    queryset =  EshopProduct.objects.filter(active=True)
     serializer_class= EshopProductSerializer
 
 

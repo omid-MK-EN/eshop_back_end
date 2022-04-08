@@ -77,7 +77,7 @@ class EshopProduct(models.Model):
     is_popular_product = models.BooleanField(default=False)
     # mojodi der enbar
     is_exit = models.BooleanField(default=True)
-    is_favorite= models.ForeignKey(get_user_model(),on_delete=models.CASCADE,related_name='is_favorite',null=True,blank=True)
+    favorite=models.ManyToManyField(get_user_model(),related_name='favorite',null=True,blank=True)
    
 
 
