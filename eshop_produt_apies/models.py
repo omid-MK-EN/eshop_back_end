@@ -67,7 +67,7 @@ class EshopProduct(models.Model):
     image = models.ImageField(upload_to="eshop_products_images/")
     active = models.BooleanField(default=True)
     color = models.ManyToManyField(EshopProductColor, related_name="color")
-    size = models.ManyToManyField(EshopProductSize, related_name="size")
+    size = models.ManyToManyField(EshopProductSize, related_name="size",null=True,blank=True)
     brand = models.ForeignKey(EshopProductBrand, on_delete=models.CASCADE, related_name="brand")
     category = models.ForeignKey(EshopProductCategory, on_delete=models.CASCADE, related_name="category")
     is_sale_product = models.BooleanField(default=False)
@@ -75,7 +75,7 @@ class EshopProduct(models.Model):
     is_popular_product = models.BooleanField(default=False)
     # mojodi der enbar
     is_exit = models.BooleanField(default=True)
-    is_favorite= models.ForeignKey(get_user_model(),on_delete=models.CASCADE,related_name='is_favorite')
+    is_favorite= models.ForeignKey(get_user_model(),on_delete=models.CASCADE,related_name='is_favorite',null=True,blank=True)
 
     def __str__(self) -> str:
         return self.title
