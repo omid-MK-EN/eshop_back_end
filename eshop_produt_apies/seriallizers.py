@@ -14,6 +14,14 @@ class EshopProductSizeSerializer(serializers.ModelSerializer):
         fields="__all__"
 
 class EshopProductSerializer(serializers.ModelSerializer):
+    def get_brand(self,obj):
+        return obj.brand.name
+    
+    def get_category(self,obj):
+        return obj.category.name
+
+    brand=serializers.SerializerMethodField()
+    category=serializers.SerializerMethodField()
     class Meta:
         model= EshopProduct
         fields="__all__"
@@ -22,7 +30,7 @@ class EshopProductSerializer(serializers.ModelSerializer):
 class EshopProductCategorySerializer(serializers.ModelSerializer):
 
     def get_products(self,obj):
-        print("==================")
+       
       
         qs= EshopProduct.objects.filter(category=obj.id)
         # print(EshopProductSerializer(qs, many=True).data['title'])
