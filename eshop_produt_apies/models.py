@@ -30,6 +30,7 @@ class EshopProductCategory(models.Model):
     image = models.ImageField(upload_to="category_images/", null=True, blank=True)
     active = models.BooleanField(default=True)
     is_exit = models.BooleanField(default=True)
+    
 
     def __str__(self) -> str:
         return self.name

@@ -1,3 +1,4 @@
+from unicodedata import category
 from rest_framework import serializers
 from .models import *
 
@@ -12,8 +13,22 @@ class EshopProductSizeSerializer(serializers.ModelSerializer):
         model= EshopProductSize
         fields="__all__"
 
+class EshopProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= EshopProduct
+        fields="__all__"
+
 
 class EshopProductCategorySerializer(serializers.ModelSerializer):
+
+    def get_products(self,obj):
+        print("==================")
+      
+        qs= EshopProduct.objects.filter(category=obj.id)
+        # print(EshopProductSerializer(qs, many=True).data['title'])
+        return EshopProductSerializer(qs, many=True).data
+       
+    products= serializers.SerializerMethodField()
     class Meta:
         model= EshopProductCategory
         fields="__all__"
@@ -21,7 +36,7 @@ class EshopProductCategorySerializer(serializers.ModelSerializer):
 class EshopProductBrandSerializer(serializers.ModelSerializer):
     class Meta:
         model= EshopProductBrand
-        fields="__all__"
+        fields=['product']
 
 class ProductRelatedPhotosSerializer(serializers.ModelSerializer):
     class Meta:
@@ -29,10 +44,7 @@ class ProductRelatedPhotosSerializer(serializers.ModelSerializer):
         fields="__all__"
 
 
-class EshopProductSerializer(serializers.ModelSerializer):
-    class Meta:
-        model= EshopProduct
-        fields="__all__"
+
 
 
 

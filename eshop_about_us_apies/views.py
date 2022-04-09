@@ -4,7 +4,8 @@ from .seriallizers import EshopAboutUsSerializer
 from .models import EshopAboutUs
 
 class EshopAboutUsViewSet(viewsets.ModelViewSet):
-
+    paginations_class= None
+    paginator = None
     serializer_class = EshopAboutUsSerializer
 
     def get_queryset(self):

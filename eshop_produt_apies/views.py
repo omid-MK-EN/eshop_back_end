@@ -14,16 +14,22 @@ class EshopProductSizeViewSet(viewsets.ModelViewSet):
 class EshopProductCategoryViewSet(viewsets.ModelViewSet):
     queryset = EshopProductCategory.objects.all()
     serializer_class= EshopProductCategorySerializer
+    paginations_class= None
+    paginator = None
 
 class EshopProductBrandViewSet(viewsets.ModelViewSet):
     queryset = EshopProductBrand.objects.all()
     serializer_class= EshopProductBrandSerializer
+    paginations_class= None
+    paginator = None
 
 
 
 class ProductRelatedPhotosViewSet(viewsets.ModelViewSet):
     queryset = ProductRelatedPhotos.objects.all()
     serializer_class= ProductRelatedPhotosSerializer
+    paginations_class= None
+    paginator = None
 
 class EshopProductViewSet(viewsets.ModelViewSet):
     queryset =  EshopProduct.objects.filter(active=True)
