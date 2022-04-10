@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from django_filters.rest_framework import DjangoFilterBackend
 from .seriallizers import *
 from .models import *
 
@@ -36,6 +37,8 @@ class ProductRelatedPhotosViewSet(viewsets.ModelViewSet):
 class EshopProductViewSet(viewsets.ModelViewSet):
     queryset =  EshopProduct.objects.filter(active=True)
     serializer_class= EshopProductSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['brand']
 
 
 

@@ -50,13 +50,17 @@ class EshopProductCategorySerializer(serializers.ModelSerializer):
         fields="__all__"
         extra_fields=['products']
 class EshopProductBrandSerializer(serializers.ModelSerializer):
-    
-    product = serializers.StringRelatedField(many=True)
-   
+
+    def get_count(self,obj):
+        count= EshopProduct.objects.filter(brand=obj.id).count()
+        return count
+
+    count = serializers.SerializerMethodField()
+    # product = serializers.StringRelatedField(many=True)
     class Meta:
         model= EshopProductBrand
         fields="__all__"
-        extra_fields=['product']
+      
        
        
 
