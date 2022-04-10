@@ -1,5 +1,8 @@
+from dataclasses import fields
+from itertools import product
 from unicodedata import category
 from rest_framework import serializers
+
 from .models import *
 
 
@@ -13,6 +16,9 @@ class EshopProductSizeSerializer(serializers.ModelSerializer):
         model= EshopProductSize
         fields="__all__"
 
+
+
+
 class EshopProductSerializer(serializers.ModelSerializer):
     def get_brand(self,obj):
         return obj.brand.name
@@ -22,29 +28,37 @@ class EshopProductSerializer(serializers.ModelSerializer):
 
     brand=serializers.SerializerMethodField()
     category=serializers.SerializerMethodField()
+    product_related= serializers.StringRelatedField(many=True)
+
     class Meta:
         model= EshopProduct
+        # fields=['title','brand','category','product_related']
         fields="__all__"
+        extra_fields = ['product_related']
 
 
 class EshopProductCategorySerializer(serializers.ModelSerializer):
 
-    def get_products(self,obj):
+    # def get_products(self,obj):
+    #     qs= EshopProduct.objects.filter(category=obj.id)
+    #     # print(EshopProductSerializer(qs, many=True).data['title'])
+    #     return EshopProductSerializer(qs, many=True).data
        
-      
-        qs= EshopProduct.objects.filter(category=obj.id)
-        # print(EshopProductSerializer(qs, many=True).data['title'])
-        return EshopProductSerializer(qs, many=True).data
-       
-    products= serializers.SerializerMethodField()
+    products = serializers.StringRelatedField(many=True)
     class Meta:
         model= EshopProductCategory
         fields="__all__"
-
+        extra_fields=['products']
 class EshopProductBrandSerializer(serializers.ModelSerializer):
+    
+    product = serializers.StringRelatedField(many=True)
+   
     class Meta:
         model= EshopProductBrand
-        fields=['product']
+        fields="__all__"
+        extra_fields=['product']
+       
+       
 
 class ProductRelatedPhotosSerializer(serializers.ModelSerializer):
     class Meta:

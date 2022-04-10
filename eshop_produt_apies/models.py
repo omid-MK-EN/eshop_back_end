@@ -54,7 +54,7 @@ class ProductRelatedPhotos(models.Model):
     
 
     def __str__(self):
-        return self.name
+        return self.image.url
 
 
 
@@ -71,8 +71,8 @@ class EshopProduct(models.Model):
     active = models.BooleanField(default=True)
     color = models.ManyToManyField(EshopProductColor, related_name="color")
     size = models.ManyToManyField(EshopProductSize, related_name="size",null=True,blank=True)
-    brand = models.ForeignKey(EshopProductBrand, on_delete=models.CASCADE, related_name="brand")
-    category = models.ForeignKey(EshopProductCategory, on_delete=models.CASCADE, related_name="category")
+    brand = models.ForeignKey(EshopProductBrand, on_delete=models.CASCADE, related_name="product")
+    category = models.ForeignKey(EshopProductCategory, on_delete=models.CASCADE, related_name="products")
     is_sale_product = models.BooleanField(default=False)
     is_whole_product = models.BooleanField(default=False)
     is_popular_product = models.BooleanField(default=False)
