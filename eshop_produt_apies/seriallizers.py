@@ -44,11 +44,30 @@ class EshopProductCategorySerializer(serializers.ModelSerializer):
     #     # print(EshopProductSerializer(qs, many=True).data['title'])
     #     return EshopProductSerializer(qs, many=True).data
        
-    products = serializers.StringRelatedField(many=True)
+    # products = serializers.StringRelatedField(many=True)
+
+    def get_products(self,obj):
+        ides=[]
+        titles=[]
+        info=[]
+        active_products= EshopProduct.objects.filter(active=True,category=obj.id)
+        for product in active_products:
+             ides.append(product.id)
+             titles.append(product.title)
+
+        info=[{"id":ides[index],"title":titles[index]}for index in range(0,len(ides))]
+        # print("================================")
+        # print(active_products)
+       
+        return info
+
+
+    products = serializers.SerializerMethodField()
+
     class Meta:
         model= EshopProductCategory
         fields="__all__"
-        extra_fields=['products']
+        # extra_fields=['products']
 class EshopProductBrandSerializer(serializers.ModelSerializer):
 
     def get_count(self,obj):
