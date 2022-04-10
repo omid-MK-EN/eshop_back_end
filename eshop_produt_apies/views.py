@@ -34,11 +34,20 @@ class ProductRelatedPhotosViewSet(viewsets.ModelViewSet):
     paginations_class= None
     paginator = None
 
-class EshopProductViewSet(viewsets.ModelViewSet):
+class EshopProductPaginationViewSet(viewsets.ModelViewSet):
     queryset =  EshopProduct.objects.filter(active=True)
     serializer_class= EshopProductSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['brand']
+
+class EshopProductViewSet(viewsets.ModelViewSet):
+    queryset =  EshopProduct.objects.filter(active=True)
+    serializer_class= EshopProductSerializer
+    paginations_class= None
+    paginator = None
+
+    # filter_backends = [DjangoFilterBackend]
+    # filterset_fields = ['brand']
 
 
 

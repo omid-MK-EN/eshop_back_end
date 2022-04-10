@@ -49,13 +49,17 @@ class EshopProductCategorySerializer(serializers.ModelSerializer):
     def get_products(self,obj):
         ides=[]
         titles=[]
+        prices=[]
+        images=[]
         info=[]
         active_products= EshopProduct.objects.filter(active=True,category=obj.id)
         for product in active_products:
              ides.append(product.id)
              titles.append(product.title)
+             prices.append(product.price)
+             images.append(product.image.url)
 
-        info=[{"id":ides[index],"title":titles[index]}for index in range(0,len(ides))]
+        info=[{"id":ides[index],"title":titles[index],'price':prices[index],'image':images[index]}for index in range(0,len(ides))]
         # print("================================")
         # print(active_products)
        

@@ -79,6 +79,7 @@ class EshopProduct(models.Model):
     # mojodi der enbar
     is_exit = models.BooleanField(default=True)
     favorite=models.ManyToManyField(get_user_model(),related_name='favorite',null=True,blank=True)
+    is_slider= models.BooleanField(default=False)
    
 
 
